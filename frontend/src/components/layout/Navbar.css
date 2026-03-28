@@ -31,6 +31,8 @@
 }
 
 .brand-icon {
+  width: 45px;
+  height: 45px;
   font-size: 1.5rem;
   background: var(--gradient-primary);
   -webkit-background-clip: text;

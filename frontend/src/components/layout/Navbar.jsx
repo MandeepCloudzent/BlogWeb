@@ -22,7 +22,7 @@ export default function Navbar() {
     <nav className="navbar">
       <div className="navbar-inner container">
         <Link to="/" className="navbar-brand">
-          <span className="brand-icon">✦</span>
+          <span className="brand-icon"><img src="./src/images/Logo.png" alt="Logo" /></span>
           <span className="brand-text">{APP_NAME}</span>
         </Link>
 
