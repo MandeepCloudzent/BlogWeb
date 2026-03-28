@@ -35,7 +35,7 @@ export default function Footer() {
         </div>
 
         <div className="footer-bottom">
-          <p>© {new Date().getFullYear()} {APP_NAME}. Made with <FiHeart className="heart-icon" /> All rights reserved.</p>
+          <p>© {new Date().getFullYear()} {APP_NAME}. Made with <img src="./src/images/Logo.png" alt="Logo" className='brand-icon' /> All rights reserved.</p>
         </div>
       </div>
     </footer>
