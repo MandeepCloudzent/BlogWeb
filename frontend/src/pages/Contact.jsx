@@ -52,7 +52,7 @@ export default function Contact() {
               <FiPhone size={24} />
               <div>
                 <h4>Phone</h4>
-                <p>+1 (555) 123-4567</p>
+                <p>+91 72068-59892</p>
               </div>
             </div>
           </div>
