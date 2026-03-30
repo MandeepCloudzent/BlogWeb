@@ -4,12 +4,8 @@ export const blogApi = {
   // Posts
   getPosts: (params) => api.get('/blog/posts/', { params }),
   getPost: (slug) => api.get(`/blog/posts/${slug}/`),
-  createPost: (data) => api.post('/blog/posts/create/', data, {
-    headers: { 'Content-Type': 'multipart/form-data' },
-  }),
-  updatePost: (slug, data) => api.patch(`/blog/posts/${slug}/update/`, data, {
-    headers: { 'Content-Type': 'multipart/form-data' },
-  }),
+  createPost: (data) => api.post('/blog/posts/create/', data),
+  updatePost: (slug, data) => api.patch(`/blog/posts/${slug}/update/`, data),
   deletePost: (slug) => api.delete(`/blog/posts/${slug}/delete/`),
 
   // Comments

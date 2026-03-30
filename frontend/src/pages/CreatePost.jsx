@@ -31,15 +31,24 @@ export default function CreatePost() {
       const formData = new FormData();
       Object.entries(form).forEach(([key, val]) => {
         if (key === 'category_id' && !val) return; // skip empty category
-        formData.append(key, val);
+        
+        // Handle boolean values for FormData correctly
+        if (typeof val === 'boolean') {
+          formData.append(key, val ? 'true' : 'false');
+        } else {
+          formData.append(key, val);
+        }
       });
+      
       if (image) formData.append('featured_image', image);
 
       await blogApi.createPost(formData);
       toast.success('Post created!');
       navigate('/blog');
     } catch (err) {
-      toast.error('Failed to create post');
+      console.error('Create Post Error:', err.response?.data);
+      const errorMsg = err.response?.data ? Object.values(err.response.data).flat()[0] : 'Failed to create post';
+      toast.error(errorMsg);
     } finally {
       setLoading(false);
     }

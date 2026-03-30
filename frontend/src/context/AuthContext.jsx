@@ -15,10 +15,15 @@ export function AuthProvider({ children }) {
       setProfile(data);
       setUser(data.user);
       setIsAuthenticated(true);
-    } catch {
+    } catch (error) {
       setUser(null);
       setProfile(null);
       setIsAuthenticated(false);
+      // If it's a 401, clear local storage
+      if (error.response?.status === 401) {
+        localStorage.removeItem('access_token');
+        localStorage.removeItem('refresh_token');
+      }
     } finally {
       setLoading(false);
     }
